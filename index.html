@@ -16,11 +16,20 @@
 </html>
 <script>
     const divs=document.querySelectorAll('div');
-    divs.forEach(div => div.addEventListener('click', logDiv));
+    divs.forEach(div => div.addEventListener('click', logDiv,
+        {capture:false,once:false}));
+/// capture provides changing nested direction
+/// once provides running listening event only once
+/// To only fire at clicked div : 
+/// capture:false; once:false, stopPrepagation:true
 
     function logDiv(e)
     {
         console.log(this);
+        e.stopPropagation();
+        /// Propagation means stop bubbling, 
+        /// handle click for first div in nested 
+        /// according to capture value
     }
 </script>
 
