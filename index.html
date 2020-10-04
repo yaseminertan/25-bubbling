@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one">
+        <div class="two">
+          <div class="three">
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+<script>
+    const divs=document.querySelectorAll('div');
+    divs.forEach(div => div.addEventListener('click', logDiv));
+
+    function logDiv(e)
+    {
+        console.log(this);
+    }
+</script>
+
+<style>
+  html {
+    box-sizing: border-box;
+  }
+  div {
+    width: 60%;
+    padding: 60px;
+  }
+
+  .one {
+    background: thistle;
+  }
+
+  .two {
+    background: mistyrose;
+  }
+
+  .three {
+    background: coral;
+  }
+</style>
